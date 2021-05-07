@@ -32,6 +32,13 @@ const underStanding = (state=0, action ) => {
   return state;
 }
 
+const support = (state=0, action ) => {
+  console.log('Hello from the Support Reducer');
+  if(action.type === 'ADD_SUPPORT'){
+    return [state, action.payload]
+  }
+  return state;
+}
 
 const storeInstance = createStore(
     //this makes it so you can call multiple reducers
@@ -39,7 +46,8 @@ const storeInstance = createStore(
     //reducers go inside our store - these are specific to our app
       feedBack,
       feeling,
-      underStanding
+      underStanding,
+      support
     }),
     //Also add our middleware for the logger
     applyMiddleware(
