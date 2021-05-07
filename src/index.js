@@ -40,6 +40,14 @@ const support = (state=0, action ) => {
   return state;
 }
 
+const comment = (state="", action ) => {
+  console.log('Hello from the Comments Reducer');
+  if(action.type === 'ADD_COMMENTS'){
+    return [state, action.payload]
+  }
+  return state;
+}
+
 const storeInstance = createStore(
     //this makes it so you can call multiple reducers
     combineReducers({
@@ -47,7 +55,8 @@ const storeInstance = createStore(
       feedBack,
       feeling,
       underStanding,
-      support
+      support,
+      comment
     }),
     //Also add our middleware for the logger
     applyMiddleware(
