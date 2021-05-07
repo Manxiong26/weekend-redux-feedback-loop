@@ -5,22 +5,22 @@ import {useState} from 'react';
 function Comment(){
 
     const history = useHistory();
-    const [comment, setComment] = useState(0);
+    const [comment, setComment] = useState("");
     const dispatch = useDispatch();
 
     const clickNext = (event) => {
         event.preventDefault();
-        dispatch({type:'ADD_UNDERSTANDING', payload: {comment: comment}})
+        dispatch({type:'ADD_COMMENTS', payload: {comment: comment}})
      history.push('/Review')
     }
 
     return (
             <div>
 
-                <p>How Well are you being supported?</p>
-                    <input type="text" placeholder="Comments"
+                <p>Any comments you want to leave?</p>
+                    <textarea rows="15" cols="20" type="text" placeholder="Comments"
                     value={comment} onChange={(event) => setComment(event.target.value)}/>
-                    <button onClick={clickNext}>Next</button>
+                    <p><button onClick={clickNext}>Next</button></p>
             </div>
     )
 }
