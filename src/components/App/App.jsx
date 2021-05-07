@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import Feelings from '../Feeling/Feeling'
-import Understanding from '../UnderStanding/UnderStanding'
-
+import Feelings from '../Feeling/Feeling';
+import Understanding from '../UnderStanding/UnderStanding';
+import Support from '../Support/Support';
 function App() {
 
   return (
@@ -19,6 +19,9 @@ function App() {
       </Route>
       <Route path="/Understanding" exact>
       <Understanding />
+      </Route>
+      <Route path="/Supported" exact>
+      <Support />
       </Route>
       </Router>
     </div>

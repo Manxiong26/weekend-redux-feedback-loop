@@ -10,7 +10,7 @@ function Support(){
     
         const clickNext = (event) => {
             event.preventDefault();
-            dispatch({type:'ADD_UNDERSTANDING', payload: {support: support}})
+            dispatch({type:'ADD_SUPPORT', payload: {support: support}})
          history.push('/comment')
         }
 
