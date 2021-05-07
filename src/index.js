@@ -8,14 +8,6 @@ import {applyMiddleware, createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
-const feedBack = (state = [], action ) => {
-    console.log('Hello from the feed back Reducer');
-    if(action.type === 'ADD_FEEDBACK'){
-        return action.payload
-    }
-    return state;
-}
-
 const feeling = (state =0, action ) => {
   console.log('Hello from the feeling Reducer');
   if(action.type === 'ADD_FEELINGS'){
