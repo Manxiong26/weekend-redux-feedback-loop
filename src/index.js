@@ -44,7 +44,6 @@ const storeInstance = createStore(
     //this makes it so you can call multiple reducers
     combineReducers({
     //reducers go inside our store - these are specific to our app
-      feedBack,
       feeling,
       underStanding,
       support,

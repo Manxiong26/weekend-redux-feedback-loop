@@ -11,6 +11,7 @@ function Comment(){
     const clickNext = (event) => {
         event.preventDefault();
         dispatch({type:'ADD_COMMENTS', payload: {comment: comment}})
+        
      history.push('/Review')
     }
 
@@ -18,7 +19,7 @@ function Comment(){
             <div>
 
                 <p>Any comments you want to leave?</p>
-                    <textarea rows="15" cols="20" type="text" placeholder="Comments"
+                    <textarea rows="10" cols="50" type="text" placeholder="Comments"
                     value={comment} onChange={(event) => setComment(event.target.value)}/>
                     <p><button onClick={clickNext}>Next</button></p>
             </div>

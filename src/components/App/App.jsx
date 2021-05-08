@@ -4,8 +4,9 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Feelings from '../Feeling/Feeling';
 import Understanding from '../UnderStanding/UnderStanding';
 import Support from '../Support/Support';
-import Comment from '../Comment/Comment'
-import Review from '../Review/Review'
+import Comment from '../Comment/Comment';
+import Review from '../Review/Review';
+import ThankYou from '../ThankYou/ThankYou';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path="/Review" exact>
       <Review />
+      </Route>
+      <Route path="/ThankYou" exact>
+      <ThankYou />
       </Route>
       </Router>
     </div>
