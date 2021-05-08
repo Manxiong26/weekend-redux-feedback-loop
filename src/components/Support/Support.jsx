@@ -5,7 +5,7 @@
 function Support(){
 
         const history = useHistory();
-        const [support, setSupport] = useState(0);
+        const [support, setSupport] = useState('');
         const dispatch = useDispatch();
     
         const clickNext = (event) => {
@@ -19,7 +19,7 @@ function Support(){
         <div>
 
             <p>How Well are you being supported?</p>
-            <input type="Number" placeholder="Rate"
+            <input type="Number" placeholder="Rate 1-5"
             value={support} onChange={(event) => setSupport(event.target.value)}/>
             <button onClick={clickNext}>Next</button>
         </div>

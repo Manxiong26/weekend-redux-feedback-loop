@@ -5,12 +5,12 @@ import {useState} from 'react';
 function Feelings(){
 
 const history = useHistory();
-const [rateFeeling, setrRateFeeling] = useState(0);
+const [feeling, setFeeling] = useState('');
 const dispatch = useDispatch();
 
 const clickNext = (event) => {
     event.preventDefault();
-    dispatch({type:'ADD_FEELINGS', payload: {feeling: rateFeeling }})
+    dispatch({type:'ADD_FEELINGS', payload: {feeling: feeling }})
  history.push('/Understanding')
 }
 
@@ -18,10 +18,11 @@ const clickNext = (event) => {
         <div>
             
             <p>How are you Feeling Today</p>
-            <input type="Number" placeholder="Rate"
-            value={rateFeeling} onChange={(event) => setrRateFeeling(event.target.value)}/>
+            <input type="Number" placeholder="Rate 1-5"
+            value={feeling} onChange={(event) => setFeeling(event.target.value)}/>
             <button onClick={clickNext}>Next</button>
         </div>
+
     )
 }
 

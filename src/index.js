@@ -8,34 +8,34 @@ import {applyMiddleware, createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
-const feeling = (state =0, action ) => {
+const feeling = (state ={}, action ) => {
   console.log('Hello from the feeling Reducer');
   if(action.type === 'ADD_FEELINGS'){
-    return [state, action.payload]
+    return state, action.payload
   }
   return state;
 }
 
-const underStanding = (state=0, action ) => {
+const underStanding = (state={}, action ) => {
   console.log('Hello from the Understanding Reducer');
   if(action.type === 'ADD_UNDERSTANDING'){
-    return [state, action.payload]
+    return state, action.payload
   }
   return state;
 }
 
-const support = (state=0, action ) => {
+const support = (state={}, action ) => {
   console.log('Hello from the Support Reducer');
   if(action.type === 'ADD_SUPPORT'){
-    return [state, action.payload]
+    return state, action.payload
   }
   return state;
 }
 
-const comment = (state="", action ) => {
+const comment = (state={}, action ) => {
   console.log('Hello from the Comments Reducer');
   if(action.type === 'ADD_COMMENTS'){
-    return [state, action.payload]
+    return state, action.payload
   }
   return state;
 }
