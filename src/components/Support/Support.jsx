@@ -1,13 +1,19 @@
+    //importing the useDispatch to dispatch the store reducer 
     import { useDispatch } from 'react-redux';
+    //importing the useHistory to to go to the next component on the DOM
     import {useHistory} from 'react-router-dom';
+    //importing the useState to use local state
     import {useState} from 'react';
 
 function Support(){
 
         const history = useHistory();
+        //local state for the form 
         const [support, setSupport] = useState('');
+        //This let's us dispatch actions to the redux
         const dispatch = useDispatch();
     
+        //click handler to submit feedback and go to the next page 
         const clickNext = (event) => {
             event.preventDefault();
             dispatch({type:'ADD_SUPPORT', payload: {support: support}})

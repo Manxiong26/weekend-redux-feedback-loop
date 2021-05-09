@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+//import these to route my components on the DOM  
+import {HashRouter as Router, Route,} from 'react-router-dom';
 import Feelings from '../Feeling/Feeling';
 import Understanding from '../UnderStanding/UnderStanding';
 import Support from '../Support/Support';
@@ -16,7 +17,7 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      
+      {/*Routing the components*/}
       <Router>
         <Route path="/" exact>
       <Feelings />
@@ -37,6 +38,7 @@ function App() {
       <ThankYou />
       </Route>
       </Router>
+      {/*End of Router*/}
     </div>
   );
 }
