@@ -2,6 +2,7 @@
 import {useHistory} from 'react-router-dom';
 //importing the useSelector to select the store reducer
 import {useSelector} from 'react-redux';
+import axios from 'axios';
 
 
 function Review(){
@@ -19,6 +20,21 @@ function Review(){
     //click handler to submit feedback and go to the next page 
     const submitHandler = () => {
         console.log('Submit Feedback');
+        const feedback = {
+            feeling: feeling,
+            underStanding: underStanding,
+            support: support,
+            comment: comment
+        }
+        console.log(feedback);
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: feedback
+        })
+        .catch(err => {
+            alert(err);
+        })
         history.push('/ThankYou')
     }
 
@@ -28,7 +44,7 @@ function Review(){
             <p>Feeling: {feeling.feeling}</p>
             <p>Understanding: {underStanding.understanding}</p>
             <p>Support: {support.support}</p>
-            <p>Cooment: {comment.comment}</p>
+            <p>Comment: {comment.comment}</p>
             <button onClick={submitHandler}>Submit</button>
         </div>
     )
