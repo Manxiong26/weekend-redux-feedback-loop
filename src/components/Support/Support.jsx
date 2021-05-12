@@ -12,7 +12,8 @@ function Support(){
         const [support, setSupport] = useState('');
         //This let's us dispatch actions to the redux
         const dispatch = useDispatch();
-    
+        //button is enable when a number between 0-6 is put in the input 
+        const enabled = support > 0 && support < 6
         //click handler to submit feedback and go to the next page 
         const clickNext = (event) => {
             event.preventDefault();
@@ -27,7 +28,7 @@ function Support(){
             <p>How Well are you being supported?</p>
             <input type="Number" placeholder="Rate 1-5"
             value={support} onChange={(event) => setSupport(event.target.value)}/>
-            <button onClick={clickNext}>Next</button>
+            <button onClick={clickNext} disabled={!enabled}>Next</button>
         </div>
     )
 }

@@ -12,7 +12,8 @@ function Understanding(){
     const [understanding, setUnderstanding] = useState('');
     //This let's us dispatch actions to the redux
     const dispatch = useDispatch();
-
+    //button is enable when a number between 0-6 is put in the input 
+    const enabled = understanding > 0 && understanding < 6
     //the click button that will go to the next page
     const clickNext = (event) => {
         event.preventDefault();
@@ -26,7 +27,7 @@ function Understanding(){
             <p>How Well are you understanding the content?</p>
             <input type="Number" placeholder="Rate 1-5"
             value={understanding} onChange={(event) => setUnderstanding(event.target.value)}/>
-            <button onClick={clickNext}>Next</button>
+            <button onClick={clickNext} disabled={!enabled}>Next</button>
         </div>
     )
 }
